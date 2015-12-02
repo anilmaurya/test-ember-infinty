@@ -3,6 +3,9 @@
 <div class="fixed-to-top jumbo-header text-center">
   <h2 id="title">ember-infinity</h2>
 </div>
+<div class="actions">
+  <button type="submit" {{ action 'addPost' }} class="btn">Post Now</button>
+</div>
 <ul class="demo-items">
   {{#each content as |item|}}
     <li>{{item.id}}. {{item.name}}</li>

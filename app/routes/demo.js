@@ -39,5 +39,12 @@ export default Ember.Route.extend(InfinityRoute, {
 
   model() {
     return this.infinityModel('post');
+  },
+
+  actions: {
+    addPost: function(){
+      var post = this.store.createRecord('post', {name: faker.company.companyName()});
+      this.get('controller.model').unshiftObject(post._internalModel);
+    }   
   }
 });
